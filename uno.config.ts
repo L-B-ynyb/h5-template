@@ -18,7 +18,15 @@ export default defineConfig({
     ['j-c', 'justify-center'],
     ['j-a', 'justify-around'],
     ['j-b', 'justify-between'],
-
+  ],
+  rules: [
+    [/^line-clamp-(\d+)$/, ([, d]) => ({
+      'display': '-webkit-box',
+      '-webkit-box-orient': 'vertical',
+      '-webkit-line-clamp': d,
+      'overflow': 'hidden',
+      'text-overflow': 'ellipsis',
+    })],
   ],
   presets: [
     presetWind4({

@@ -24,6 +24,8 @@ import 'vant/es/notify/style'
 import 'vant/es/image-preview/style'
 
 import { vLoading } from '@/directives/v-loading'
+import vHeader from './directives/v-header'
+import vFooter from './directives/v-footer'
 
 async function bootstrap() {
   await initUserBridgeContext()
@@ -36,6 +38,8 @@ async function bootstrap() {
   app.use(pinia)
   app.use(i18n)
   app.directive('loading', vLoading)
+  app.directive('header', vHeader)
+  app.directive('footer', vFooter)
 
   app.mount('#app')
 }
