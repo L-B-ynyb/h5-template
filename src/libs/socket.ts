@@ -9,7 +9,7 @@ class WebSocketClient {
   private static instance: WebSocketClient
   private socket: WebSocket | null = null
   private listeners: Map<string, (data: any) => void> = new Map()
-  private url = window.__APP_CONFIG__.WS_URL
+  private url = window.__APP_CONFIG__?.WS_URL ?? ''
   private messageQueue: MessagePayload[] = []
 
   private reconnectAttempts = 0
